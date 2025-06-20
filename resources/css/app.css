@@ -55,5 +55,13 @@
             @apply font-normal;
         }
     }
+
+    .sidebar-menu-item {
+        @apply flex gap-2 rounded-lg border border-transparent px-3 py-[7px] duration-200 hover:border-zinc-200 hover:bg-white dark:hover:border-zinc-700 dark:hover:bg-zinc-900;
+
+        &.active {
+            @apply border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900;
+        }
+    }
 }
 

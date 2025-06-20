@@ -1,19 +1,55 @@
 {
-    "semi": true,
+    "htmlWhitespaceSensitivity": "ignore",
+    "printWidth": 120,
+    "proseWrap": "preserve",
+    "quoteProps": "preserve",
+    "semi": false,
     "singleQuote": true,
-    "singleAttributePerLine": false,
-    "htmlWhitespaceSensitivity": "css",
-    "printWidth": 150,
-    "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
-    "tailwindFunctions": ["clsx", "cn"],
-    "tailwindStylesheet": "resources/css/app.css",
     "tabWidth": 4,
-    "overrides": [
-        {
-            "files": "**/*.yml",
-            "options": {
-                "tabWidth": 2
-            }
-        }
-    ]
+    "trailingComma": "es5",
+    "endOfLine": "crlf",
+    "plugins": ["prettier-plugin-organize-attributes", "prettier-plugin-tailwindcss"],
+    "attributeGroups": [
+        "^v-show",
+        "^v-if",
+        "^v-else-if",
+        "^v-else",
+        "^ref",
+        "^:ref",
+        "^href",
+        "^:href",
+        "^src",
+        "^:src",
+        "^tag",
+        "^:tag",
+        "^method",
+        "^:method",
+        "^as",
+        "^:as",
+        "^type",
+        "^:type",
+        "^data$",
+        "^:data$",
+        "^label",
+        "^:label",
+        "^id",
+        "^:id",
+        "^v-model",
+        "^error",
+        "^:error",
+        "^icon",
+        "^:icon",
+        "^v-for",
+        "^key",
+        "^:key",
+        "^value",
+        "^:value",
+        "^data-",
+        "^:data-",
+        "$DEFAULT",
+        "^@",
+        "^v-tooltip"
+    ],
+    "attributeSort": "ASC"
 }
+

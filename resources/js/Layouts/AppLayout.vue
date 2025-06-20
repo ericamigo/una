@@ -5,7 +5,7 @@ import Navigation from './Partials/Navigation.vue'
 <template>
     <div class="min-h-dvh">
         <Navigation />
-        <main class="p-4 md:p-6 lg:pl-70">
+        <main class="p-4 md:p-6 lg:pl-78">
             <slot></slot>
         </main>
     </div>

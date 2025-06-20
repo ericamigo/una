@@ -1,93 +1,97 @@
-<script setup lang="ts">
-import InputError from '@/components/InputError.vue';
-import TextLink from '@/components/TextLink.vue';
-import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import AuthBase from '@/layouts/AuthLayout.vue';
-import { Head, useForm } from '@inertiajs/vue3';
-import { LoaderCircle } from 'lucide-vue-next';
+<script setup>
+import { AuthLayout } from '@/Layouts'
+import { Head, Link, useForm } from '@inertiajs/vue3'
+import { InputError, InputLabel, TextInput, Checkbox } from '@/Components/Forms'
 
-defineProps<{
-    status?: string;
-    canResetPassword: boolean;
-}>();
+defineProps({
+    canResetPassword: Boolean,
+    status: String,
+})
 
 const form = useForm({
     email: '',
     password: '',
     remember: false,
-});
+})
 
 const submit = () => {
     form.post(route('login'), {
         onFinish: () => form.reset('password'),
-    });
-};
+    })
+}
 </script>
 
 <template>
-    <AuthBase title="Log in to your account" description="Enter your email and password below to log in">
-        <Head title="Log in" />
+    <Head title="Log in" />
+    <AuthLayout>
+        <div class="mx-auto w-full max-w-sm space-y-10 py-10">
+            <div>
+                <h1 class="mb-6 text-5xl font-semibold tracking-tight">UNA</h1>
+                <h2 class="text-2xl font-semibold tracking-tight">Log in to your account</h2>
+                <p>Enter your email and password below to log in</p>
+            </div>
 
-        <div v-if="status" class="mb-4 text-center text-sm font-medium text-green-600">
-            {{ status }}
-        </div>
+            <div v-if="status" class="mb-4 text-center text-sm font-medium text-green-600">
+                {{ status }}
+            </div>
 
-        <form @submit.prevent="submit" class="flex flex-col gap-6">
-            <div class="grid gap-6">
-                <div class="grid gap-2">
-                    <Label for="email">Email address</Label>
-                    <Input
-                        id="email"
+            <form class="space-y-4" @submit.prevent="submit">
+                <div>
+                    <InputLabel value="Email" for="login-email" />
+                    <TextInput
                         type="email"
-                        required
-                        autofocus
+                        id="login-email"
+                        v-model="form.email"
                         :tabindex="1"
                         autocomplete="email"
-                        v-model="form.email"
-                        placeholder="email@example.com"
+                        autofocus
+                        class="w-full"
+                        required
                     />
                     <InputError :message="form.errors.email" />
                 </div>
-
-                <div class="grid gap-2">
-                    <div class="flex items-center justify-between">
-                        <Label for="password">Password</Label>
-                        <TextLink v-if="canResetPassword" :href="route('password.request')" class="text-sm" :tabindex="5">
-                            Forgot password?
-                        </TextLink>
+                <div>
+                    <div class="flex justify-between">
+                        <InputLabel value="Password" for="login-password" />
+                        <Link
+                            v-if="canResetPassword"
+                            :href="route('password.request')"
+                            :tabindex="5"
+                            class="text-xs/5 outline-none"
+                        >
+                            Forgot Password
+                        </Link>
                     </div>
-                    <Input
-                        id="password"
+                    <TextInput
                         type="password"
-                        required
-                        :tabindex="2"
-                        autocomplete="current-password"
+                        id="login-password"
                         v-model="form.password"
-                        placeholder="Password"
+                        :tabindex="2"
+                        autocomplete="password"
+                        class="w-full"
+                        required
                     />
                     <InputError :message="form.errors.password" />
                 </div>
-
-                <div class="flex items-center justify-between">
-                    <Label for="remember" class="flex items-center space-x-3">
-                        <Checkbox id="remember" v-model="form.remember" :tabindex="3" />
-                        <span>Remember me</span>
-                    </Label>
+                <div class="flex">
+                    <label class="flex items-center select-none" for="remember-me">
+                        <Checkbox id="remember-me" v-model:checked="form.remember" :tabindex="3" name="remember" />
+                        <span class="ms-2 cursor-pointer font-medium">Remember me</span>
+                    </label>
                 </div>
+                <div class="grid">
+                    <button type="submit" :tabindex="4" class="btn btn-primary justify-center">
+                        <span>Log In</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </form>
 
-                <Button type="submit" class="mt-4 w-full" :tabindex="4" :disabled="form.processing">
-                    <LoaderCircle v-if="form.processing" class="h-4 w-4 animate-spin" />
-                    Log in
-                </Button>
-            </div>
-
-            <div class="text-center text-sm text-muted-foreground">
+            <div class="text-xs text-zinc-500">
                 Don't have an account?
-                <TextLink :href="route('register')" :tabindex="5">Sign up</TextLink>
+                <Link :href="route('register')" :tabindex="6" class="outline-none">Sign up</Link>
             </div>
-        </form>
-    </AuthBase>
+        </div>
+    </AuthLayout>
 </template>
+

@@ -50,6 +50,10 @@
         &.btn-primary {
             @apply border-cyan-600 bg-cyan-600 text-white;
         }
+
+        i {
+            @apply font-normal;
+        }
     }
 }
 

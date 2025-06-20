@@ -3,6 +3,7 @@ import '../css/app.css'
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
+import { useDark } from '@vueuse/core'
 import { ZiggyVue } from 'ziggy-js'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel'
@@ -17,7 +18,9 @@ createInertiaApp({
             .mount(el)
     },
     progress: {
-        color: '#4B5563',
+        color: 'oklch(45% 0.085 224.283)',
     },
 })
+
+useDark()
 

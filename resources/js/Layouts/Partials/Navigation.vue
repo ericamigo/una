@@ -11,7 +11,7 @@ import { Link } from '@inertiajs/vue3'
         </div>
         <div class="px-3 lg:grow">
             <div class="flex flex-col gap-px">
-                <Link href="#" class="sidebar-menu-item">
+                <Link href="#" :class="['sidebar-menu-item', { 'active': route().current('dashboard') }]">
                     <i class="ri-fw ri-dashboard-line"></i>
                     <span>Dashboard</span>
                 </Link>

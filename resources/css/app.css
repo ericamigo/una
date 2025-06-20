@@ -57,10 +57,18 @@
     }
 
     .sidebar-menu-item {
-        @apply flex gap-2 rounded-lg border border-transparent px-3 py-[7px] duration-200 hover:border-zinc-200 hover:bg-white dark:hover:border-zinc-700 dark:hover:bg-zinc-900;
+        @apply relative flex gap-2 rounded-lg border border-transparent px-3 py-[7px] text-zinc-500 duration-200 hover:bg-white hover:text-zinc-900 dark:hover:bg-zinc-900 dark:hover:text-white;
 
         &.active {
-            @apply border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900;
+            @apply border-zinc-200 bg-white font-bold text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-white;
+
+            i {
+                @apply text-cyan-600;
+            }
+        }
+
+        i {
+            @apply font-normal;
         }
     }
 }

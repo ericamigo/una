@@ -21,7 +21,7 @@ defineExpose({ focus: () => input.value.focus() })
     <select
         ref="input"
         v-model="model"
-        class="cursor-pointer rounded-lg border-zinc-200 py-[7px] outline-hidden duration-150 focus:cursor-auto focus:border-cyan-600 focus:ring-cyan-600"
+        class="dark:bg-zinc-850 cursor-pointer rounded-lg border-zinc-200 py-[7px] outline-hidden duration-150 focus:cursor-auto focus:border-cyan-600 focus:ring-cyan-600 dark:border-zinc-700 dark:focus:border-cyan-600"
     >
         <slot></slot>
     </select>

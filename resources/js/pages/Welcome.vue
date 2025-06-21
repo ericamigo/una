@@ -1,5 +1,9 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3'
+import { Head, Link, usePage } from '@inertiajs/vue3'
+import { computed } from 'vue'
+
+const page = usePage(),
+    auth = computed(() => page.props.auth)
 </script>
 
 <template>
@@ -11,12 +15,19 @@ import { Head, Link } from '@inertiajs/vue3'
                 <p>because every great app starts with una</p>
             </div>
             <div class="flex justify-center gap-3">
-                <div>
-                    <Link :href="route('login')" class="btn btn-primary">Log In</Link>
-                </div>
-                <div>
-                    <Link :href="route('register')" class="btn">Register</Link>
-                </div>
+                <template v-if="auth">
+                    <div>
+                        <Link :href="route('dashboard')" class="btn btn-primary">Dashboard</Link>
+                    </div>
+                </template>
+                <template v-else>
+                    <div>
+                        <Link :href="route('login')" class="btn btn-primary">Log In</Link>
+                    </div>
+                    <div>
+                        <Link :href="route('register')" class="btn">Register</Link>
+                    </div>
+                </template>
             </div>
         </div>
     </div>

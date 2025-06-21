@@ -19,6 +19,7 @@ createInertiaApp({
     },
     progress: {
         color: 'oklch(45% 0.085 224.283)',
+        delay: 5,
     },
 })
 

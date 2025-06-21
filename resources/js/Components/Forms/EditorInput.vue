@@ -17,7 +17,7 @@ onMounted(() => {
         editorProps: {
             attributes: {
                 class: [
-                    'prose text-zinc-900 leading-normal prose-p:mb-4 prose-p:mt-0 prose-p:last:mb-0 prose-li:mt-0 prose-li:mb-0 max-w-full px-3 py-[7px] border border-zinc-200 rounded-lg focus:outline-hidden bg-white focus:border-cyan-600 duration-150 focus:ring-1 focus:ring-cyan-600 outline-hidden prose-strong:font-semibold ',
+                    'prose text-zinc-900 leading-normal prose-p:mb-4 prose-p:mt-0 prose-p:last:mb-0 prose-li:mt-0 prose-li:mb-0 max-w-full px-3 py-[7px] border border-zinc-200 rounded-lg focus:outline-hidden bg-white focus:border-cyan-600 duration-150 focus:ring-1 focus:ring-cyan-600 outline-hidden prose-strong:font-semibold dark:bg-zinc-850 dark:border-zinc-700 dark:focus:border-cyan-600 dark:text-white',
                 ].join(' '),
             },
         },

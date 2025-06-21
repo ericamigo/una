@@ -12,23 +12,23 @@ import UserDropdown from './UserDropdown.vue'
         </div>
         <div class="px-4 md:px-6 lg:grow">
             <div class="flex flex-col gap-px">
-                <Link href="#" :class="['sidebar-menu-item', { 'active': route().current('dashboard') }]">
+                <Link
+                    :href="route('dashboard')"
+                    :class="['sidebar-menu-item', { 'active': route().current('dashboard') }]"
+                >
                     <i class="ri-fw ri-dashboard-line"></i>
                     <span>Dashboard</span>
                 </Link>
                 <div class="h-4"></div>
-                <Link href="#" class="sidebar-menu-item">
-                    <i class="ri-fw ri-pencil-ruler-2-line"></i>
-                    <span>Projects</span>
-                </Link>
-                <Link href="#" class="sidebar-menu-item">
-                    <i class="ri-fw ri-group-line"></i>
-                    <span>Customers</span>
-                </Link>
-                <Link href="#" class="sidebar-menu-item">
-                    <i class="ri-fw ri-list-check-3"></i>
-                    <span>Tasks</span>
-                </Link>
+                <a
+                    href="https://github.com/ericamigo/una"
+                    class="sidebar-menu-item"
+                    rel="noreferrer noopener"
+                    target="_blank"
+                >
+                    <i class="ri-fw ri-github-fill"></i>
+                    <span>Github</span>
+                </a>
             </div>
         </div>
         <UserDropdown />

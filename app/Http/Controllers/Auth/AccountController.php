@@ -1,48 +1,43 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\ProfileUpdateRequest;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Http\Requests\Auth\AccountRequest;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class ProfileController extends Controller
+class AccountController extends Controller
 {
-    /**
-     * Show the user's profile settings page.
-     */
-    public function edit(Request $request): Response
+    public function edit(): Response
     {
-        return Inertia::render('settings/Profile', [
-            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
-            'status' => $request->session()->get('status'),
+        return Inertia::render('Auth/Account', [
+            'account' => UserResource::make(Auth::user()),
         ]);
     }
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(AccountRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $request->user()->email = $request->email;
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
 
+        if ($request->password) {
+            $request->user()->password = $request->password;
+        }
+
         $request->user()->save();
 
-        return to_route('profile.edit');
+        return Redirect::back();
     }
 
-    /**
-     * Delete the user's profile.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validate([

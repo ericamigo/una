@@ -40,11 +40,17 @@ const isDark = useDark(),
                         <div class="truncate text-xs text-zinc-500" v-text="auth.user.email"></div>
                     </div>
                     <hr class="-mx-1 my-1 border-zinc-200 dark:border-zinc-700" />
-                    <Link href="#" class="dropdown-menu-item">
+                    <Link
+                        :href="route('profile.edit')"
+                        :class="['dropdown-menu-item', { 'active': route().current('profile.edit') }]"
+                    >
                         <i class="ri-profile-line"></i>
                         <span>Profile</span>
                     </Link>
-                    <Link href="#" class="dropdown-menu-item">
+                    <Link
+                        :href="route('account.edit')"
+                        :class="['dropdown-menu-item', { 'active': route().current('account.edit') }]"
+                    >
                         <i class="ri-shield-user-line"></i>
                         <span>Account</span>
                     </Link>

@@ -122,6 +122,10 @@
         }
     }
 
+    .dropdown-menu-item {
+        @apply flex gap-2 rounded-lg px-3 py-2 duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800;
+    }
+
     .page-title {
         @apply text-2xl/10 font-semibold tracking-tight;
     }

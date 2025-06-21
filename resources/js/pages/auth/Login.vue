@@ -81,8 +81,8 @@ const submit = () => {
                 </div>
                 <div class="grid">
                     <button type="submit" :tabindex="4" class="btn btn-primary justify-center">
+                        <i class="ri-contract-right-line"></i>
                         <span>Log In</span>
-                        <i class="ri-arrow-right-line"></i>
                     </button>
                 </div>
             </form>

@@ -116,7 +116,7 @@ const form = useForm({
                         </thead>
                         <tbody>
                             <tr v-for="i in 10">
-                                <td class="max-w-px">
+                                <td class="max-w-px font-semibold">
                                     <div class="flex w-full overflow-hidden text-ellipsis whitespace-nowrap">
                                         <div class="grow truncate">Amazing Name {{ i }}</div>
                                     </div>

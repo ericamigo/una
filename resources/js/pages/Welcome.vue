@@ -15,7 +15,7 @@ const page = usePage(),
                 <p>because every great app starts with una</p>
             </div>
             <div class="flex justify-center gap-3">
-                <template v-if="auth">
+                <template v-if="auth.user">
                     <div>
                         <Link :href="route('dashboard')" class="btn btn-primary">Dashboard</Link>
                     </div>

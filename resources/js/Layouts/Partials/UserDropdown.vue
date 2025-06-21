@@ -35,9 +35,9 @@ const isDark = useDark(),
                 class="dark:bg-zinc-850 w-full min-w-52 rounded-lg border border-zinc-200 bg-white shadow-xs lg:w-[var(--reka-popper-anchor-width)] dark:border-zinc-700"
             >
                 <div class="flex flex-col gap-px p-1">
-                    <div class="p-3">
-                        <div class="font-semibold" v-text="auth.user.name"></div>
-                        <div class="text-xs text-zinc-500" v-text="auth.user.email"></div>
+                    <div class="overflow-hidden p-3 whitespace-nowrap">
+                        <div class="truncate font-semibold" v-text="auth.user.name"></div>
+                        <div class="truncate text-xs text-zinc-500" v-text="auth.user.email"></div>
                     </div>
                     <hr class="-mx-1 my-1 border-zinc-200 dark:border-zinc-700" />
                     <Link href="#" class="dropdown-menu-item">
@@ -45,7 +45,7 @@ const isDark = useDark(),
                         <span>Profile</span>
                     </Link>
                     <Link href="#" class="dropdown-menu-item">
-                        <i class="ri-profile-line"></i>
+                        <i class="ri-shield-user-line"></i>
                         <span>Account</span>
                     </Link>
                     <hr class="-mx-1 my-1 border-zinc-200 dark:border-zinc-700" />

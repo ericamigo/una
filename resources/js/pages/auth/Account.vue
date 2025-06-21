@@ -1,7 +1,8 @@
 <script setup>
 import { AppLayout } from '@/Layouts'
-import { Checkbox, InputLabel, InputError, EditorInput, SelectInput, TextInput } from '@/Components/Forms'
+import { InputLabel, InputError, TextInput } from '@/Components/Forms'
 import { Head, Link, useForm } from '@inertiajs/vue3'
+import DeleteAccount from './DeleteAccount.vue'
 
 const props = defineProps({
     account: Object,
@@ -98,6 +99,10 @@ function submit() {
                     </div>
                 </div>
             </form>
+
+            <div class="h-10"></div>
+
+            <DeleteAccount />
         </div>
     </AppLayout>
 </template>

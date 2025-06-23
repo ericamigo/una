@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "ericmigo/una",
+    "name": "ericamigo/una",
     "type": "project",
     "description": "Just another skeleton application for the Laravel framework.",
     "keywords": [

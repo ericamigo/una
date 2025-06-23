@@ -85,7 +85,7 @@ function submit() {
                     </div>
                 </div>
                 <div class="flex justify-end gap-2">
-                    <div>
+                    <div v-if="form.isDirty">
                         <Link :href="route('account.edit')" class="btn btn-link">
                             <i class="ri-reset-left-line"></i>
                             <span>Reset</span>

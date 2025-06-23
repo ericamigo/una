@@ -39,7 +39,7 @@ function submit() {
                     <button
                         type="submit"
                         :disabled="form.processing"
-                        class="btn border-rose-500 bg-rose-500 text-white dark:border-rose-500"
+                        class="btn border-rose-500 bg-rose-500 text-white hover:border-rose-600 hover:bg-rose-600"
                     >
                         <i class="ri-delete-bin-line"></i>
                         <span>Delete</span>

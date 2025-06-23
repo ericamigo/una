@@ -139,3 +139,5 @@
     }
 }
 
+@import 'vue-toastification/dist/index.css';
+@import './vt-override.css';

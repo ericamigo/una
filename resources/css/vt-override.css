@@ -1,0 +1,31 @@
+.Vue-Toastification__container {
+    @apply px-2 select-none;
+}
+.Vue-Toastification__container .Vue-Toastification__progress-bar {
+    @apply z-10 h-full bg-zinc-50 select-none dark:bg-zinc-900;
+}
+
+.Vue-Toastification__container .Vue-Toastification__toast {
+    @apply dark:bg-zinc-850 mb-2 flex min-h-0 gap-2 rounded-lg border border-zinc-200 bg-white p-3 text-zinc-900 shadow-xs dark:border-zinc-700 dark:text-white;
+}
+.Vue-Toastification__container .Vue-Toastification__toast.Vue-Toastification__toast--success {
+}
+.Vue-Toastification__container .Vue-Toastification__toast.Vue-Toastification__toast--error {
+}
+.Vue-Toastification__container .Vue-Toastification__icon {
+    @apply relative z-20 m-0 text-sm;
+}
+.Vue-Toastification__container .Vue-Toastification__toast-body {
+    @apply relative z-20 font-sans text-xs/5;
+}
+.Vue-Toastification__container .Vue-Toastification__close-button {
+    @apply relative z-20 size-5 pl-0 text-sm/4 text-zinc-500 dark:text-zinc-400;
+}
+
+.Vue-Toastification__container .Vue-Toastification__toast.Vue-Toastification__toast--success .Vue-Toastification__icon {
+    @apply text-green-600;
+}
+
+.Vue-Toastification__container .Vue-Toastification__toast.Vue-Toastification__toast--error .Vue-Toastification__icon {
+    @apply text-rose-600;
+}

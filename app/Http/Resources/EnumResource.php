@@ -2,15 +2,14 @@
 
 namespace App\Http\Resources;
 
-use App\Models\User;
 use App\Traits\Resources\Unwrappable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @mixin User
+ * @mixin BackedEnum
  */
-class UserResource extends JsonResource
+class EnumResource extends JsonResource
 {
     use Unwrappable;
 
@@ -18,11 +17,6 @@ class UserResource extends JsonResource
 
     public function toArray(Request $request): array
     {
-        return [
-            'id' => $this->ulid,
-            'name' => $this->name,
-            'role' => EnumResource::make($this->role),
-            'email' => $this->email,
-        ];
+        return parent::toArray($request);
     }
 }

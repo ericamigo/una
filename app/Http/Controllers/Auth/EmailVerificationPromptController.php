@@ -16,7 +16,7 @@ class EmailVerificationPromptController extends Controller
         return $request->user()->hasVerifiedEmail()
             ? Redirect::intended(route('dashboard', absolute: false))
             : Inertia::render('Auth/VerifyEmail', [
-                'status' => $request->session()->get('status')
+                'status' => $request->session()->get('status'),
             ]);
     }
 }

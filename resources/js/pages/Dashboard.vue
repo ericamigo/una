@@ -131,4 +131,3 @@ const form = useForm({
         </div>
     </AppLayout>
 </template>
-

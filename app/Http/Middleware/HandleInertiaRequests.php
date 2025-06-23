@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Resources\UserResource;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -27,7 +28,7 @@ class HandleInertiaRequests extends Middleware
                 'url' => config('app.url'),
             ],
             'auth' => [
-                'user' => $request->user(),
+                'user' => UserResource::makeIf($request->user()),
             ],
             'ziggy' => [
                 ...(new Ziggy)->toArray(),

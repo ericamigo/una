@@ -31,7 +31,7 @@ const submit = () => {
                 <p>Enter your email and password below to log in</p>
             </div>
 
-            <div v-if="status" class="mb-4 text-center text-sm font-medium text-green-600">
+            <div v-if="status" class="text-sm font-medium text-green-600">
                 {{ status }}
             </div>
 
@@ -80,7 +80,12 @@ const submit = () => {
                     </label>
                 </div>
                 <div class="grid">
-                    <button type="submit" :tabindex="4" class="btn btn-primary justify-center">
+                    <button
+                        type="submit"
+                        :disabled="form.processing"
+                        :tabindex="4"
+                        class="btn btn-primary justify-center"
+                    >
                         <i class="ri-contract-right-line"></i>
                         <span>Log In</span>
                     </button>

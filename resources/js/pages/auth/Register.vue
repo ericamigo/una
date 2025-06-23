@@ -80,7 +80,12 @@ const submit = () => {
                     <InputError :message="form.errors.password_confirmation" />
                 </div>
                 <div class="grid">
-                    <button type="submit" :tabindex="5" class="btn btn-primary justify-center">
+                    <button
+                        type="submit"
+                        :disabled="form.processing"
+                        :tabindex="5"
+                        class="btn btn-primary justify-center"
+                    >
                         <span>Create Account</span>
                         <i class="ri-arrow-right-line"></i>
                     </button>

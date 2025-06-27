@@ -8,7 +8,7 @@ const props = defineProps({
 })
 
 const form = useForm({
-    name: props.profile.data.name,
+    name: props.profile.name,
     current_password: '',
 })
 

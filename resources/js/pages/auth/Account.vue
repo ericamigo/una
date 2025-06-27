@@ -9,7 +9,7 @@ const props = defineProps({
 })
 
 const form = useForm({
-    email: props.account.data.email,
+    email: props.account.email,
     password: '',
     password_confirmation: '',
     current_password: '',

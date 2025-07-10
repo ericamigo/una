@@ -1,8 +1,8 @@
 <script setup>
+import { computed } from 'vue'
+import { DropdownMenuContent, DropdownMenuRoot, DropdownMenuTrigger } from 'reka-ui'
 import { Link, usePage } from '@inertiajs/vue3'
 import { useDark, useToggle } from '@vueuse/core'
-import { PopoverContent, PopoverRoot, PopoverTrigger } from 'reka-ui'
-import { computed } from 'vue'
 
 const isDark = useDark(),
     toggleDark = useToggle(isDark),
@@ -12,8 +12,8 @@ const isDark = useDark(),
 
 <template>
     <div class="relative p-4 md:p-6">
-        <PopoverRoot v-slot="{ open }">
-            <PopoverTrigger as-child>
+        <DropdownMenuRoot :modal="false" v-slot="{ open }">
+            <DropdownMenuTrigger as-child>
                 <button
                     type="button"
                     :class="[
@@ -28,9 +28,10 @@ const isDark = useDark(),
                     ></span>
                     <i class="ri-expand-up-down-line hidden text-zinc-500 lg:inline-block"></i>
                 </button>
-            </PopoverTrigger>
-            <PopoverContent
-                :collisionPadding="16"
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+                :align="`end`"
+                :side="`bottom`"
                 :sideOffset="8"
                 class="dark:bg-zinc-850 w-full min-w-52 rounded-lg border border-zinc-200 bg-white shadow-xs lg:w-[var(--reka-popper-anchor-width)] dark:border-zinc-700"
             >
@@ -66,7 +67,7 @@ const isDark = useDark(),
                         <span>Log Out</span>
                     </Link>
                 </div>
-            </PopoverContent>
-        </PopoverRoot>
+            </DropdownMenuContent>
+        </DropdownMenuRoot>
     </div>
 </template>

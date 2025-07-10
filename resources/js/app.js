@@ -26,7 +26,7 @@ createInertiaApp({
             .mount(el)
     },
     progress: {
-        color: 'oklch(45% 0.085 224.283)',
+        color: '#0092b8',
         delay: 5,
     },
 })

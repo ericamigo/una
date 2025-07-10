@@ -45,7 +45,7 @@ jobs:
                   REMOTE_HOST: ${{ secrets.VPS_HOST }}
                   REMOTE_USER: ${{ secrets.VPS_USER }}
                   TARGET: '/var/www/project'
-                  ARGS: '--delete --exclude=.env --exclude=storage/ --exclude=vendor/ --exclude=node_modules/ --exclude=public/storage'
+                  ARGS: '--delete --exclude=/.env --exclude=/storage --exclude=/public/storage'
 
             - name: Run Remote/Artisan Commands
               uses: appleboy/ssh-action@v0.1.6

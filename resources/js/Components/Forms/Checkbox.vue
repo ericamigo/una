@@ -1,6 +1,6 @@
 <script setup>
-import { computed } from 'vue'
 import { CheckboxRoot, CheckboxIndicator } from 'reka-ui'
+import { computed } from 'vue'
 
 const emit = defineEmits(['update:checked'])
 

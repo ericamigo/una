@@ -1,7 +1,7 @@
 <script setup>
 import { AppLayout } from '@/Layouts'
-import { Checkbox, InputLabel, InputError, EditorInput, SelectInput, TextInput } from '@/Components/Forms'
 import { Head, Link, useForm } from '@inertiajs/vue3'
+import { InputLabel, InputError, TextInput } from '@/Components/Forms'
 
 const props = defineProps({
     profile: Object,

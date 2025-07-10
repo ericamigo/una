@@ -94,7 +94,7 @@ const form = useForm({
                         </button>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary">
+                        <button type="submit" :disabled="form.processing" class="btn btn-primary">
                             <i class="ri-save-line"></i>
                             <span>Submit</span>
                         </button>

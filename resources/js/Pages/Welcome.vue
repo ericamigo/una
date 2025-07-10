@@ -1,6 +1,6 @@
 <script setup>
-import { Head, Link, usePage } from '@inertiajs/vue3'
 import { computed } from 'vue'
+import { Head, Link, usePage } from '@inertiajs/vue3'
 
 const page = usePage(),
     auth = computed(() => page.props.auth)

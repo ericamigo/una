@@ -1,7 +1,7 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
-import UserDropdown from './UserDropdown.vue'
 import { useToggle } from '@vueuse/core'
+import UserDropdown from './UserDropdown.vue'
 
 const [showMenu, toggleMenu] = useToggle()
 </script>

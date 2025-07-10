@@ -1,7 +1,7 @@
 <script setup>
 import { AppLayout } from '@/Layouts'
-import { InputLabel, InputError, TextInput } from '@/Components/Forms'
 import { Head, Link, useForm } from '@inertiajs/vue3'
+import { InputLabel, InputError, TextInput } from '@/Components/Forms'
 import DeleteAccount from './DeleteAccount.vue'
 
 const props = defineProps({

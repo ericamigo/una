@@ -26,7 +26,7 @@ createInertiaApp({
             .mount(el)
     },
     progress: {
-        color: '#0092b8',
+        color: '#00bba7',
         delay: 5,
     },
 })
@@ -49,3 +49,4 @@ router.on('success', (event) => {
         })
     }
 })
+

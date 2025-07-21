@@ -16,7 +16,7 @@ const page = usePage(),
         password_confirmation: '',
     })
 
-const submit = () => {
+function submit() {
     form.post(route('password.store'), {
         onFinish: () => {
             form.reset('password', 'password_confirmation')

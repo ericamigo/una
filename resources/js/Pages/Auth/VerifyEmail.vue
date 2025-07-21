@@ -9,7 +9,7 @@ defineProps({
 const page = usePage(),
     form = useForm({})
 
-const submit = () => {
+function submit() {
     form.post(route('verification.send'))
 }
 </script>

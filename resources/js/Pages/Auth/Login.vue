@@ -15,7 +15,7 @@ const page = usePage(),
         remember: false,
     })
 
-const submit = () => {
+function submit() {
     form.post(route('login'), {
         onFinish: () => form.reset('password'),
     })

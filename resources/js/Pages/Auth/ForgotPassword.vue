@@ -12,7 +12,7 @@ const page = usePage(),
         email: '',
     })
 
-const submit = () => {
+function submit() {
     form.post(route('password.email'))
 }
 </script>

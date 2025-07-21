@@ -21,7 +21,7 @@ const isDark = useDark(),
                         open ? 'dark:bg-zinc-850 bg-white shadow-xs' : 'dark:hover:bg-zinc-850 hover:bg-white',
                     ]"
                 >
-                    <i :class="['ri-user-smile-line ri-fw duration-200', { 'text-cyan-600': open }]"></i>
+                    <i :class="['ri-user-smile-line ri-fw duration-200', { 'text-teal-500': open }]"></i>
                     <span
                         class="hidden grow truncate text-left font-semibold lg:inline-block"
                         v-text="auth.user.name"

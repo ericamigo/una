@@ -63,4 +63,3 @@ const [showMenu, toggleMenu] = useToggle(),
         <UserDropdown />
     </nav>
 </template>
-

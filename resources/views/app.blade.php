@@ -19,7 +19,7 @@
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
-    <body class="font-sans bg-zinc-100 dark:bg-zinc-800 text-zinc-900 selection:bg-cyan-600 selection:text-white dark:text-white transition-colors duration-200">
+    <body class="font-sans bg-zinc-100 dark:bg-zinc-800 text-zinc-900 selection:bg-teal-500 selection:text-white dark:text-white transition-colors duration-200">
         @inertia
     </body>
 </html>

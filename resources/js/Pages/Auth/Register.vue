@@ -1,14 +1,15 @@
 <script setup>
 import { AuthLayout } from '@/Layouts'
-import { Head, Link, useForm } from '@inertiajs/vue3'
+import { Head, Link, useForm, usePage } from '@inertiajs/vue3'
 import { InputError, InputLabel, TextInput } from '@/Components/Forms'
 
-const form = useForm({
-    name: '',
-    email: '',
-    password: '',
-    password_confirmation: '',
-})
+const page = usePage(),
+    form = useForm({
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+    })
 
 const submit = () => {
     form.post(route('register'), {
@@ -22,7 +23,7 @@ const submit = () => {
     <AuthLayout>
         <div class="mx-auto w-full max-w-sm space-y-10 py-10">
             <div>
-                <h1 class="mb-6 text-5xl font-semibold tracking-tight">UNA</h1>
+                <h1 class="mb-6 text-5xl font-semibold tracking-tight" v-text="page.props.app.name"></h1>
                 <h2 class="text-2xl font-semibold tracking-tight">Create an account</h2>
                 <p>Enter your details below to create your account</p>
             </div>

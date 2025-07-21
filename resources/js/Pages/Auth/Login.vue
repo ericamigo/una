@@ -1,6 +1,6 @@
 <script setup>
 import { AuthLayout } from '@/Layouts'
-import { Head, Link, useForm } from '@inertiajs/vue3'
+import { Head, Link, useForm, usePage } from '@inertiajs/vue3'
 import { InputError, InputLabel, TextInput, Checkbox } from '@/Components/Forms'
 
 defineProps({
@@ -8,11 +8,12 @@ defineProps({
     status: String,
 })
 
-const form = useForm({
-    email: '',
-    password: '',
-    remember: false,
-})
+const page = usePage(),
+    form = useForm({
+        email: '',
+        password: '',
+        remember: false,
+    })
 
 const submit = () => {
     form.post(route('login'), {
@@ -26,7 +27,7 @@ const submit = () => {
     <AuthLayout>
         <div class="mx-auto w-full max-w-sm space-y-10 py-10">
             <div>
-                <h1 class="mb-6 text-5xl font-semibold tracking-tight">UNA</h1>
+                <h1 class="mb-6 text-5xl font-semibold tracking-tight" v-text="page.props.app.name"></h1>
                 <h2 class="text-2xl font-semibold tracking-tight">Log in to your account</h2>
                 <p>Enter your email and password below to log in</p>
             </div>

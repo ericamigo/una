@@ -1,6 +1,6 @@
 <script setup>
 import { AuthLayout } from '@/Layouts'
-import { Head, useForm } from '@inertiajs/vue3'
+import { Head, useForm, usePage } from '@inertiajs/vue3'
 import { InputLabel, InputError, TextInput } from '@/Components/Forms'
 
 const props = defineProps({
@@ -8,12 +8,13 @@ const props = defineProps({
     token: String,
 })
 
-const form = useForm({
-    token: props.token,
-    email: props.email,
-    password: '',
-    password_confirmation: '',
-})
+const page = usePage(),
+    form = useForm({
+        token: props.token,
+        email: props.email,
+        password: '',
+        password_confirmation: '',
+    })
 
 const submit = () => {
     form.post(route('password.store'), {
@@ -29,7 +30,7 @@ const submit = () => {
     <AuthLayout>
         <div class="mx-auto w-full max-w-sm space-y-10 py-10">
             <div>
-                <h1 class="mb-6 text-5xl font-semibold tracking-tight">UNA</h1>
+                <h1 class="mb-6 text-5xl font-semibold tracking-tight" v-text="page.props.app.name"></h1>
                 <h2 class="text-2xl font-semibold tracking-tight">Reset Password</h2>
                 <p>Please enter your new password below</p>
             </div>

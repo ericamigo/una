@@ -18,7 +18,7 @@ const isDark = useDark(),
                     type="button"
                     :class="[
                         'inline-flex w-10 items-center justify-center gap-2.5 rounded-lg border border-zinc-200 py-[7px] duration-200 outline-none lg:w-full lg:px-3 dark:border-zinc-700',
-                        open ? 'dark:bg-zinc-850 bg-white' : 'dark:hover:bg-zinc-850 hover:bg-white',
+                        open ? 'dark:bg-zinc-850 bg-white shadow-xs' : 'dark:hover:bg-zinc-850 hover:bg-white',
                     ]"
                 >
                     <i :class="['ri-user-smile-line ri-fw duration-200', { 'text-cyan-600': open }]"></i>
@@ -71,3 +71,4 @@ const isDark = useDark(),
         </DropdownMenuRoot>
     </div>
 </template>
+

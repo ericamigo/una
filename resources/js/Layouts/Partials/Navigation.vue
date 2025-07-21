@@ -1,9 +1,10 @@
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Link, usePage } from '@inertiajs/vue3'
 import { useToggle } from '@vueuse/core'
 import UserDropdown from './UserDropdown.vue'
 
-const [showMenu, toggleMenu] = useToggle()
+const [showMenu, toggleMenu] = useToggle(),
+    page = usePage()
 </script>
 
 <template>
@@ -20,7 +21,11 @@ const [showMenu, toggleMenu] = useToggle()
             </button>
         </div>
         <div class="flex p-4 md:px-6 lg:py-6">
-            <Link :href="route('dashboard')" class="text-xl/10 font-extrabold tracking-tight">UNA</Link>
+            <Link
+                :href="route('dashboard')"
+                class="text-xl/10 font-extrabold tracking-tight"
+                v-text="page.props.app.name"
+            ></Link>
         </div>
         <div
             :class="[
@@ -58,3 +63,4 @@ const [showMenu, toggleMenu] = useToggle()
         <UserDropdown />
     </nav>
 </template>
+

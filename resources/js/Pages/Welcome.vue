@@ -11,7 +11,7 @@ const page = usePage(),
     <div class="flex min-h-dvh items-center">
         <div class="mx-auto w-full max-w-4xl space-y-10 py-20">
             <div class="text-center">
-                <h1 class="text-[8rem]/[8rem] font-semibold tracking-tight">UNA</h1>
+                <h1 class="text-[8rem]/[8rem] font-semibold tracking-tight" v-text="page.props.app.name"></h1>
                 <p>because every great app starts with una</p>
             </div>
             <div class="flex justify-center gap-3">
@@ -32,3 +32,4 @@ const page = usePage(),
         </div>
     </div>
 </template>
+

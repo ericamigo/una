@@ -1,12 +1,7 @@
 <script setup>
+import { DropdownMenuArrow, DropdownMenuContent, DropdownMenuSeparator } from 'reka-ui'
+import { DropdownMenuRoot, DropdownMenuTrigger } from 'reka-ui'
 import { Link } from '@inertiajs/vue3'
-import {
-    DropdownMenuArrow,
-    DropdownMenuContent,
-    DropdownMenuRoot,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from 'reka-ui'
 </script>
 
 <template>

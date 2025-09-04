@@ -1,19 +1,35 @@
-import prettier from 'eslint-config-prettier';
-import vue from 'eslint-plugin-vue';
+import { defineConfig } from 'eslint/config'
+import globals from 'globals'
+import js from '@eslint/js'
+import pluginVue from 'eslint-plugin-vue'
+import unusedImports from 'eslint-plugin-unused-imports'
 
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript';
-
-export default defineConfigWithVueTs(
-    vue.configs['flat/essential'],
-    vueTsConfigs.recommended,
+export default defineConfig([
     {
-        ignores: ['vendor', 'node_modules', 'public', 'bootstrap/ssr', 'tailwind.config.js', 'resources/js/components/ui/*'],
-    },
-    {
-        rules: {
-            'vue/multi-word-component-names': 'off',
-            '@typescript-eslint/no-explicit-any': 'off',
+        files: ['resources/js/**/*.{js,vue}'],
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                route: 'readonly',
+                axios: 'readonly',
+            },
         },
+        plugins: { js, 'unused-imports': unusedImports },
+        extends: ['js/recommended', ...pluginVue.configs['flat/essential']],
+        rules: {
+            'indent': ['error', 4, { SwitchCase: 1 }],
+            'unused-imports/no-unused-imports': 'error',
+            'vue/html-indent': ['error', 4],
+            'vue/multi-word-component-names': 'off',
+            'vue/prefer-use-template-ref': 'error',
+            'vue/no-v-text-v-html-on-component': [
+                'error',
+                {
+                    'allow': ['link', 'prose', 'table-td'],
+                },
+            ],
+        },
+        ignores: ['**/vendor/**', '**/node_modules/**', '**/public/**', '**/storage/**', '**/*.php', '**/Tooltip.vue'],
     },
-    prettier,
-);
+])
+

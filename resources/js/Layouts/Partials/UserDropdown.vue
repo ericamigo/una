@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { DropdownMenuContent, DropdownMenuRoot, DropdownMenuTrigger } from 'reka-ui'
+import { DropdownMenuArrow, DropdownMenuContent, DropdownMenuRoot, DropdownMenuTrigger } from 'reka-ui'
 import { Link, usePage } from '@inertiajs/vue3'
 import { useDark, useToggle } from '@vueuse/core'
 
@@ -33,7 +33,7 @@ const isDark = useDark(),
                 :align="`end`"
                 :side="`bottom`"
                 :sideOffset="8"
-                class="dark:bg-zinc-850 w-full min-w-52 rounded-lg border border-zinc-200 bg-white shadow-xs lg:w-[var(--reka-popper-anchor-width)] dark:border-zinc-700"
+                class="dropdown-menu-content dark:bg-zinc-850 relative z-10 w-full min-w-52 rounded-lg border border-zinc-200 bg-white shadow-xs lg:w-[var(--reka-popper-anchor-width)] dark:border-zinc-700"
             >
                 <div class="flex flex-col gap-px p-1">
                     <div class="overflow-hidden p-3 whitespace-nowrap">
@@ -67,7 +67,9 @@ const isDark = useDark(),
                         <span>Log Out</span>
                     </Link>
                 </div>
+                <DropdownMenuArrow class="dropdown-menu-arrow" />
             </DropdownMenuContent>
         </DropdownMenuRoot>
     </div>
 </template>
+

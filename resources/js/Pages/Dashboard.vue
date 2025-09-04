@@ -2,6 +2,10 @@
 import { AppLayout } from '@/Layouts'
 import { Checkbox, InputLabel, InputError, EditorInput, SelectInput, TextInput } from '@/Components/Forms'
 import { Head, useForm } from '@inertiajs/vue3'
+import Dropdown from '@/Components/Templates/Dropdown.vue'
+import RadioGroup from '@/Components/Templates/RadioGroup.vue'
+import CheckboxGroup from '@/Components/Templates/CheckboxGroup.vue'
+import Dialog from '@/Components/Templates/Dialog.vue'
 
 const form = useForm({
     name: '',
@@ -126,6 +130,35 @@ const form = useForm({
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            <hr class="border-zinc-200 dark:border-zinc-700" />
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="space-y-2">
+                        <div class="font-bold">Dropdown</div>
+                        <Dropdown />
+                    </div>
+                </div>
+                <div class="card-body border-t border-zinc-200 dark:border-zinc-700">
+                    <div class="space-y-2">
+                        <div class="font-bold">Radio Group</div>
+                        <RadioGroup />
+                    </div>
+                </div>
+                <div class="card-body border-t border-zinc-200 dark:border-zinc-700">
+                    <div class="space-y-2">
+                        <div class="font-bold">Checkbox Group</div>
+                        <CheckboxGroup />
+                    </div>
+                </div>
+                <div class="card-body border-t border-zinc-200 dark:border-zinc-700">
+                    <div class="space-y-2">
+                        <div class="font-bold">Dialog</div>
+                        <Dialog />
+                    </div>
                 </div>
             </div>
         </div>

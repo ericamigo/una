@@ -7,7 +7,7 @@ import { DialogContent, DialogOverlay, DialogPortal, DialogRoot, DialogTrigger }
     <div>
         <DialogRoot>
             <DialogTrigger class="btn btn-outline">
-                <span>Dialog</span>
+                <span>Open Dialog</span>
                 <i class="ri-slideshow-view"></i>
             </DialogTrigger>
             <DialogPortal>
@@ -24,7 +24,7 @@ import { DialogContent, DialogOverlay, DialogPortal, DialogRoot, DialogTrigger }
                                         <DialogClose as-child>
                                             <button
                                                 type="button"
-                                                class="flex size-10 cursor-pointer items-center justify-center opacity-50 duration-200 outline-none hover:opacity-100"
+                                                class="-mr-3 flex size-10 cursor-pointer items-center justify-center opacity-50 duration-200 outline-none hover:opacity-100"
                                             >
                                                 <i class="ri-close-large-line"></i>
                                             </button>

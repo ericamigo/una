@@ -1,12 +1,12 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, useTemplateRef } from 'vue'
 
 const model = defineModel({
     type: String,
     required: true,
 })
 
-const input = ref(null)
+const input = useTemplateRef('input')
 
 onMounted(() => {
     if (input.value.hasAttribute('autofocus')) {

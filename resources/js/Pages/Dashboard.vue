@@ -119,7 +119,7 @@ const form = useForm({
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="i in 10">
+                            <tr v-for="i in 10" :key="`row-${i}`">
                                 <td class="max-w-px font-semibold">
                                     <div class="flex w-full overflow-hidden text-ellipsis whitespace-nowrap">
                                         <div class="grow truncate">Amazing Name {{ i }}</div>
@@ -164,3 +164,4 @@ const form = useForm({
         </div>
     </AppLayout>
 </template>
+

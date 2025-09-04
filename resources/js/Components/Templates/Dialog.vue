@@ -18,7 +18,7 @@ import { DialogContent, DialogOverlay, DialogPortal, DialogRoot, DialogTrigger }
                             <div class="card-body space-y-6">
                                 <div class="flex justify-between gap-4 md:gap-6">
                                     <div>
-                                        <DialogTitle class="page-title"></DialogTitle>
+                                        <DialogTitle class="page-title">Dialog Title</DialogTitle>
                                     </div>
                                     <div>
                                         <DialogClose as-child>
@@ -30,6 +30,11 @@ import { DialogContent, DialogOverlay, DialogPortal, DialogRoot, DialogTrigger }
                                             </button>
                                         </DialogClose>
                                     </div>
+                                </div>
+                                <div>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nesciunt quidem!
+                                    Vitae, perferendis eveniet. Accusantium omnis nobis labore, voluptatem animi ad
+                                    dolores rerum at asperiores distinctio, ex sit, quam repellat.
                                 </div>
                             </div>
                         </div>

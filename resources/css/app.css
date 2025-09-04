@@ -153,6 +153,14 @@
             animation: fadeOutImplode 0.2s ease-in;
         }
     }
+
+    .dropdown-menu-separator {
+        @apply -mx-1 my-[3px] border-t border-neutral-200 dark:border-neutral-700;
+    }
+
+    .dropdown-menu-arrow {
+        @apply dark:fill-zinc-850 z-20 fill-white stroke-zinc-200 dark:stroke-zinc-700;
+    }
 }
 
 @layer utilities {

@@ -67,7 +67,7 @@ const isDark = useDark(),
                         <span>Log Out</span>
                     </Link>
                 </div>
-                <DropdownMenuArrow class="dark:fill-zinc-850 z-20 fill-white stroke-zinc-200 dark:stroke-zinc-700" />
+                <DropdownMenuArrow class="dropdown-menu-arrow" />
             </DropdownMenuContent>
         </DropdownMenuRoot>
     </div>
